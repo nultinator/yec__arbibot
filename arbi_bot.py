@@ -33,7 +33,8 @@ else:
         "southx_api": SOUTHX_API_KEY,
         "southx_secret": SOUTHX_SECRET,
         "xeggex_api": XEGGEX_API_KEY,
-        "xeggex_secret": XEGGEX_SECRET
+        "xeggex_secret": XEGGEX_SECRET,
+        "default_arb_amount": 1 
     }
     keys_json = json.dumps(keys_dict, indent=4)
     with open(path, "w") as file:
