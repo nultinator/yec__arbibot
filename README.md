@@ -1,7 +1,8 @@
 # yec__arbibot
 
 ## Setup
-* Ensure Python is installed on your machine by running the command `python --version`, you'll get an output similar to this image
+* Ensure Python is installed on your machine by running the command `python --version`, you'll get an output similar to thhe image below
+  
 ![image](https://github.com/nultinator/yec__arbibot/assets/72562693/4df98c08-f7fd-492b-8c59-f4d679d5df26)
 * If you do not have Python installed, you can get it [here](https://www.python.org/downloads/)
 * Clone this repo, you can copy and paste the command below (before you second guess yourself, yes there are two `_`(underscores) in the name:
