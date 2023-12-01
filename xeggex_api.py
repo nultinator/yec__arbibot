@@ -79,7 +79,7 @@ class XeggexClient:
             #"timestamp": str(int(time.time()))
         }
         resp = requests.post(url, headers=headers, data=payload)
-        return resp.text
+        return resp.json()
     def get_balances(self):
         url = f"{BASE_URL}/balances"
         auth_string = f"{self.api_key}:{self.secret}"
@@ -131,3 +131,26 @@ class XeggexClient:
         #insert the map into a larger map named after our reference currency
         return_map[ref_currency] = map
         return return_map
+    def cancel_orders(self, symbol, side, order_type="limit"):
+        url = f"{BASE_URL}/cancelallorders"
+        auth_string = f"{self.api_key}:{self.secret}"
+        base64_auth_string = base64.b64encode(auth_string.encode()).decode()
+
+        headers = {
+            "Authorization": f"Basic {base64_auth_string}",
+            #"Accept": "application/json",
+            #"Content-Type": "application/json",
+            #"X-API-KEY": self.api_key,                       
+        }
+
+        payload = {
+            "symbol": symbol,
+            "side": side,
+            "type": order_type,
+            #"quantity": str(float(quantity)),
+            #"price": str(float(price))
+            #"strictValidate": False,
+            #"timestamp": str(int(time.time()))
+        }
+        resp = requests.post(url, headers=headers, data=payload)
+        return resp.json()
